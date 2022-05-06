@@ -1,0 +1,57 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: rgb(235, 176, 55);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 176, 55, 1) 0%,
+    rgba(224, 213, 32, 1) 38%,
+    rgba(255, 171, 0, 1) 100%
+  );
+}
+.Header {
+  border: 1px solid black;
+  height: 100px;
+}
+.Container {
+  display: flex;
+  height: 500px;
+}
+.Sidebar {
+  border: 1px solid black;
+  width: 20%;
+}
+.Sidebar ul {
+  list-style: none;
+}
+.Sidebar ul a {
+  text-decoration: none;
+}
+.Sidebar ul a:hover {
+  color: #ffffff;
+}
+.Sidebar ul li {
+  padding: 45px;
+}
+.Content {
+  border: 1px solid black;
+  width: 79.8%;
+}
+.Content form {
+  margin-top: 220px;
+}
+.Content button {
+  background-color: green;
+  color: #ffffff;
+  width: 80px;
+  height: 30px;
+  border-radius: 4px;
+}
+.Content button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.Footer {
+  height: 100px;
+  border: 1px solid black;
+}
