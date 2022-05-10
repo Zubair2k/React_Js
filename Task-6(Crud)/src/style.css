@@ -1,0 +1,8 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#submit:hover {
+  background-color: #ffffff;
+  color: rgb(129, 14, 129);
+}
