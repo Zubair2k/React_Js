@@ -21,7 +21,9 @@ import { deepPurple } from "@mui/material/colors";
 
 let i = 0;
 const detail = [];
+let changeEditvalue = "";
 export default function Crud() {
+  const [decider, setDecider] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
@@ -41,12 +43,14 @@ export default function Crud() {
   };
 
   const changeEdit = (id) => {
-    const changeEditvalue = displaydetails.filter((data) => data.id == id);
-    console.log(changeEditvalue);
-    setName(changeEditvalue.name);
-    setEmail(changeEditvalue.email);
-    setGender(changeEditvalue.gender);
-    setFeedback(changeEditvalue.feedback);
+    setDecider(false);
+    changeEditvalue = displaydetails.filter(
+      (data) => data.formvalues.id === id
+    );
+    setName(changeEditvalue[0].formvalues.name);
+    setEmail(changeEditvalue[0].formvalues.email);
+    setGender(changeEditvalue[0].formvalues.gender);
+    setFeedback(changeEditvalue[0].formvalues.feedback);
   };
   const handleClose = () => {
     setOpen(false);
@@ -54,9 +58,17 @@ export default function Crud() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    i++;
-    detail.push({ formvalues });
-    setdisplaydetails(detail);
+    if (decider) {
+      i++;
+      detail.push({ formvalues });
+      setdisplaydetails(detail);
+    } else {
+      changeEditvalue[0].formvalues.name = name;
+      changeEditvalue[0].formvalues.email = email;
+      changeEditvalue[0].formvalues.gender = gender;
+      changeEditvalue[0].formvalues.feedback = feedback;
+      setDecider(true);
+    }
     setName(" ");
     setEmail(" ");
     setGender(" ");
