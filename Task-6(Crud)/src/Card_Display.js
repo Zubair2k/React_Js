@@ -18,8 +18,7 @@ export default function Card_Display(props) {
   };
 
   const handleDelete = (e) => {
-    const del = document.querySelector(".feedBack");
-    del.removeChild(document.getElementById(props.detail.formvalues.id));
+    props.changeDelete(props.detail.formvalues.id);
   };
 
   return (
@@ -37,7 +36,7 @@ export default function Card_Display(props) {
         action={
           <Stack direction="row" spacing={2}>
             <IconButton
-              aria-label="delete"
+              aria-label="edit"
               size="small"
               style={{ color: deepPurple[500] }}
             >
