@@ -32,16 +32,22 @@ export default function Crud() {
   const [displaydetails, setdisplaydetails] = useState([]);
   const [formvalues, setFormvalues] = useState({
     id: i,
-    name: name,
-    email: email,
-    gender: gender,
-    feedback: feedback
+    name: "",
+    email: "",
+    gender: "",
+    feedback: ""
   });
 
   const handleClickOpen = () => {
     setOpen(true);
   };
-
+  const changeDelete=(id)=>
+  {
+      let changeDeletevalue = displaydetails.filter(
+        (data) => data.formvalues.id != id
+      );
+      setdisplaydetails(changeDeletevalue)
+  }
   const changeEdit = (id) => {
     setDecider(false);
     changeEditvalue = displaydetails.filter(
@@ -52,6 +58,7 @@ export default function Crud() {
     setGender(changeEditvalue[0].formvalues.gender);
     setFeedback(changeEditvalue[0].formvalues.feedback);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -233,7 +240,7 @@ export default function Crud() {
       <br />
       <div className="feedBack">
         {displaydetails.map((detail) => (
-          <Card_Display detail={detail} changeEdit={changeEdit} />
+          <Card_Display detail={detail} changeEdit={changeEdit} changeDelete={changeDelete} />
         ))}
       </div>
     </Box>
