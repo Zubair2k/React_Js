@@ -37,3 +37,8 @@ input
   margin: 5px;
   float: right;
 }
+
+.check
+{
+  text-decoration: line-through;
+}
