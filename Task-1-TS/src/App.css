@@ -1,41 +1,106 @@
+body{
+  background-color: black;
+}
+
 .App 
 {
   text-align: center;
 }
 
-input
+.task
 {
-  height: 20px;
-  width: 300px;
-  margin-right: 10px;
+  margin-right: 30px;
+  width: 320px;
+  height: 35px;
+  border-radius: 6px;
+  font-size: medium;
+}
+
+.addbtn
+{
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: #73ff00a1;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 1px 1px 2px 1px white;
 }
 
 .container{
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.Todo_Container{
-  margin-top: 100px;
-  border-radius: 20px;
-  border: 1px solid black;
-  overflow: auto;
+.Form 
+{
+  color: white;
 }
-.TodoC{
+
+.addtask
+{
+  margin-bottom: 150px;
+}
+
+.Todo_Container
+{
+  width: 500px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 1px 0px 2px 1px white;
+}
+
+.TodoC
+{
+  background-color: #73ff00a1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.TodoC h3{
-  margin-left: 10px;
-  margin-right: 40px;
+.TodoC *
+{
+  flex: 25%;
+}
+.TodoC h3
+{
+  width: 25%;
 }
 
-.TodoC button{
-  margin: 5px;
-  float: right;
+.checkbox
+{
+  width: 20px;
+  height: 20px;
+}
+
+.delete
+{
+  border-radius: 7px;
+  width: 40px;
+  height: 25px;
+  background-color: #000000;
+  margin-right: 10px;
+  color: #ffffff;
+  box-shadow: 1px 1px 2px 1px black;
+}
+.edit
+{
+  border-radius: 7px;
+  width: 60px;
+  height: 25px;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 1px 1px 2px 1px black;
+}
+.update
+{
+  border-radius: 7px;
+  width: 80px;
+  height: 30px;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 1px 0px 2px 1px black;
 }
 
 .check
