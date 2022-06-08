@@ -1,24 +1,25 @@
 import React,{FunctionComponent as FC,useState} from 'react';
-
 import './App.css';
 
 interface Props{
     changeDelete:any;
     cont : any;
+    getCount:any;
 }
 
-const TodoC:FC<Props>=({cont,changeDelete})=> {
+let inc=0
+const TodoC:FC<Props>=({cont,getCount,changeDelete})=> {
 
     const [updatebtn,setUpdatebtn]=useState<boolean>(false);
     const [strike,setStrike]=useState<boolean>(false)
-    const [visible,setVisible]=useState<boolean>(false)
     const [editbtn,setEditbtn]=useState<boolean>(true)
-    
 
     const handleCheck=(e:any)=>{
-        setStrike(ps => !ps)
+        strike ? inc-- : inc++
         setUpdatebtn(false);
         setEditbtn(!e.target.checked)
+        getCount(inc)
+        setStrike(ps => !ps)
     }
 
     const handleDelete=(numdel:any)=>{
@@ -36,14 +37,17 @@ const TodoC:FC<Props>=({cont,changeDelete})=> {
     }
 
     return (
+        
         <div className="TodoC">
-            <input type="checkbox" id={cont.id} onClick={handleCheck} name={cont.text} />
+            <input type="checkbox" className='checkbox' id={cont.id} onClick={handleCheck}/>
             <h3 id={cont.id} contentEditable={updatebtn} className={strike ? "check":""}>{cont.text}</h3>
-            {editbtn  && <button id={cont.id} onClick={(e)=>handleDelete(e.target)}>X</button>}
-            {editbtn &&<button id={cont.id} onClick={handleEdit}> Edit</button> } 
-            {updatebtn &&<button id={cont.id} onClick={handleUpdate}>Update</button>}
-            
-    </div>
+            <div>
+                {editbtn  && <button id={cont.id} className="delete" onClick={(e)=>handleDelete(e.target)}>X</button>}
+                {editbtn &&<button id={cont.id} className="edit" onClick={handleEdit}>EDIT</button> } 
+                {updatebtn &&<button id={cont.id} className="update" onClick={handleUpdate}>UPDATE</button>}
+            </div>
+        </div>
+        
     )
 }
 
