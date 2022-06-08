@@ -5,14 +5,14 @@ import './App.css';
 
 const Form:FC =()=> {
     let id=0;
-    let s:any;
-    const [updatedvalue,setUpdatedvalue]=useState<TODOI[]>([])
-    const [edit, setEdit] = useState<boolean>(true);
+    const [count,setCount]=useState<number>(0);
     const [todo,setTodo]=useState<string>("");
     const [toggle,setToggle]=useState<boolean>(true);
     const [todos,setTodos]=useState<TODOI[]>([]);
 
-
+    const getCount=(count:number)=>{
+        setCount(count)
+    }
     const changeDelete=(delid:any)=>{
         console.log(delid)
         let remainingvalue=todos.filter((deldata)=>deldata.id!=delid)
@@ -47,15 +47,15 @@ const Form:FC =()=> {
     return (
         <div className="Form">
             <h1>TODO APP</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="addtask">
                 <input type="text" className='task' placeholder='Add Task' onChange={handleChange} value={todo}/>
-                <button type='submit' className='add'>ADD</button>
+                <button type='submit' className='addbtn'>ADD</button>
             </form>
+            <h2>Task Completed : {count}</h2>
             <div className="Todo_Container">
                 <h1>THINGS</h1>
-                <hr/>
                 {todos.map((cont) => (
-                    <TodoC cont={cont} changeDelete={changeDelete}/>
+                    <TodoC cont={cont} getCount={getCount} changeDelete={changeDelete}/>
                 ))}    
             </div>
         </div>
