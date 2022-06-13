@@ -1,0 +1,48 @@
+{
+    "items":[
+        {
+            "product":"N95 Mask",
+            "price":100
+        },
+        {
+            "product":"Cloth Mask",
+            "price":30
+        },
+        {
+            "product":"Surgical Mask",
+            "price":20
+        },
+        {
+            "product":"Dettol hand wash",
+            "price":70
+        },
+        {
+            "product":"Closeup",
+            "price":10
+        },
+        {
+            "product":"Colgate",
+            "price":40
+        },
+        {
+            "product":"Arun Icecream",
+            "price":150
+        },
+        {
+            "product":"Cinthol",
+            "price":30
+        },
+        {
+            "product":"Pearl",
+            "price":50
+        },
+        {
+            "product":"Diary Milk",
+            "price":90
+        },
+        {
+            "product":"Perk",
+            "price":5
+        }
+    ]
+}
