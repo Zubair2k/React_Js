@@ -1,0 +1,37 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.add {
+  font-weight: normal;
+  font-size: smaller;
+}
+
+.tel {
+  font-weight: normal;
+  font-size: smaller;
+}
+
+.Retailer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Retailer1 {
+  width: 35%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.Retailer2 {
+  width: 35%;
+  text-align: center;
+  border: 1px solid black;
+}
+.Retailer3 {
+  width: 35%;
+  text-align: center;
+  border: 1px solid black;
+}
